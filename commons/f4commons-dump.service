@@ -1,0 +1,7 @@
+[Unit]
+Description=Dump the f4commons database into /srv/f4commons-backup
+After=postgresql.service
+
+[Service]
+Type=oneshot
+ExecStart=/opt/f4commons-bin/f4commons-dump.sh

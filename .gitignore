@@ -1,0 +1,12 @@
+# never commit these
+private/
+*.exe
+*.dll
+*.lib
+*.obj
+*.pdb
+key.txt
+*.token
+__pycache__/
+.venv/
+venv/
