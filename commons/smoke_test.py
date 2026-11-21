@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""End-to-end check of a running f4commons server, over the tailnet, as two members.
+"""End-to-end check of a running f4commons server, at its URL, as two members.
 
 usage: python smoke_test.py <url> <token-file-A> <token-file-B>
 Writes a few clearly labelled test notes (tag 'smoke-test'); the board claim it makes is released at the end.

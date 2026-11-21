@@ -15,7 +15,7 @@ sudo systemctl enable --now f4commons >/dev/null 2>&1
 sudo systemctl restart f4commons
 sleep 5
 systemctl is-active f4commons
-sudo ss -ltnp | grep ':4410 ' || { sudo journalctl -u f4commons -n 30 --no-pager; exit 1; }
+sudo ss -ltnp | grep '127.0.0.1:4410 ' || { sudo journalctl -u f4commons -n 30 --no-pager; exit 1; }
 # Nightly dump (root runs it; the dump runs as postgres).
 sudo install -d -o postgres -g postgres -m 700 /srv/f4commons-backup
 sudo install -d -o root -g root -m 755 /opt/f4commons-bin

@@ -52,7 +52,7 @@ what counts.
 | [`fleet/submitter.py`](fleet/submitter.py) | One process owns every claim and submit: largest first, claim just in time, recheck on the real pack, submit or give up with the code | Keeps margins under the daily and pending caps; pauses itself on a strike, a failed verdict or 5 errors in a row |
 | [`remote-compile/`](remote-compile/) | A drop-in `msvc11.py` replacement that compiles on another host over SSH (Wine), so light machines share one build box | A compile round trip takes a few seconds |
 | [`c2scope/`](c2scope/) | A wrapper and symptom guide for [c2scope](https://github.com/NoahBPeterson/c2scope), which traces the exact VC2012 x64 back end | `icount` names the source line and compiler pass behind each differing instruction |
-| [`commons/`](commons/) | A tailnet-only MCP server and Postgres for a small trusted group: notes, verdicts, a work board with expiring claims, a shape-keyed source pool | 13 bounded tools; refuses pasted bytes, listings and keys; 24 of 24 end-to-end checks |
+| [`commons/`](commons/) | A token-gated MCP server (behind your existing TLS site) and Postgres for a small trusted group: notes, verdicts, a work board with expiring claims, a shape-keyed source pool | 13 bounded tools; refuses pasted bytes, listings and keys; 24 of 24 end-to-end checks |
 | [`docs/insights.md`](docs/insights.md) | Our measured compiler and server findings (M-numbers) | The game is built without C++ EH although packs list `/EHsc`; VS2012 RTM, Update 2 and Update 4 compile identically |
 
 ## Quick start

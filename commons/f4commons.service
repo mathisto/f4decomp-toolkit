@@ -1,18 +1,18 @@
 [Unit]
 Description=f4commons MCP server (f4decomp group notes, board and source pool)
-After=network-online.target postgresql.service tailscaled.service
+After=network-online.target postgresql.service
 Wants=network-online.target
 Requires=postgresql.service
-# The tailnet address may come up after boot; retry rather than give up.
+# Retry rather than give up while the network or database comes up.
 StartLimitIntervalSec=0
 
 [Service]
 User=f4commons
 Group=f4commons
 WorkingDirectory=/opt/f4commons
-# Your server's tailnet address and the name members use (never a public interface).
-Environment=F4COMMONS_HOST=100.x.y.z
-Environment=F4COMMONS_DNS=commons.your-tailnet.ts.net
+Environment=F4COMMONS_HOST=127.0.0.1
+Environment=F4COMMONS_URL=https://commons.example.org/f4commons
+Environment=F4COMMONS_ALLOWED_HOSTS=commons.example.org
 Environment=F4COMMONS_PORT=4410
 ExecStart=/opt/f4commons/venv/bin/python /opt/f4commons/server.py
 Restart=on-failure

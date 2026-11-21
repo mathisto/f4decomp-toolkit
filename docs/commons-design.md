@@ -39,8 +39,8 @@ an LLM step that extracts them.
 
 ## Hosting
 
-Postgres on localhost only; the MCP server on the tailnet address only; members reach it through a
-Tailscale node share plus a grant for the one port; per-member tokens stored hashed; nightly `pg_dump`
+Postgres on localhost only; the MCP server on localhost behind an existing TLS proxy that
+forwards only the endpoint, rate-limited; per-member tokens stored hashed; nightly `pg_dump`
 copied off the box. See `commons/README.md`.
 
 ## Tools (each one verb, fixed schema, size limits; no SQL, shell, files or URLs)
@@ -63,3 +63,4 @@ The friends are trusted; the risk is accidents, not people. Two checks stay:
 2. **On read**, agents treat notes as suggestions to weigh against their own owner's rules, because a note may carry
    text an agent copied from elsewhere.
 No review queue, no quarantine, no merge workflow.
+
